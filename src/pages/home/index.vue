@@ -19,22 +19,28 @@
     @click="presenter.handleToAbout"
   />
 
-  <up-button type="primary" text="pinia" @click="presenter.handleToAbout" />
-  <up-button type="primary" text="测试跳转about" @click="test" />
+  <up-button
+    type="primary"
+    text="测试跳转about"
+    @click="presenter.handleToAbout"
+  />
+  <up-button type="primary" text="test" @click="test" />
 </template>
 <script lang="ts" setup>
 import { useUserStore } from "@/stores/modules/user";
+import msg from "@/utils/msg";
 
 import { usePresenter } from "./presenter";
 
 function test() {
   useUserStore().setToken("newToken");
-  console.log("1");
+  useUserStore().setUserInfo({
+    token: "111111",
+    admin: "1111111111",
+  });
+  msg.success("111111111");
 }
 
 const presenter = usePresenter();
 const { model } = presenter;
 </script>
-<style lang="scss">
-@import url("./index.scss");
-</style>

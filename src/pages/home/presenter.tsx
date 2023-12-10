@@ -20,7 +20,7 @@ export const usePresenter = () => {
       path: "/pages/about/index",
       //参数
       query: {
-        name: "name",
+        name: "123",
       },
     });
   };
